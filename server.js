@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/user.js";
+import postRoutes from './routes/posts.js';
+
 
 mongoose.Promise = global.Promise;
 
@@ -18,6 +20,8 @@ app.listen(PORT, () => {
 });
 
 app.use("/users", userRoutes);
+app.use('/posts', postRoutes);
+
 
 app.get('/', (req, res) => {
     res.send('Flutter-DB')
