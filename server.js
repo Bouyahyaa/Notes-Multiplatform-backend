@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     res.send('Flutter-DB')
 })
 
-const CONNECTION_URL = "mongodb+srv://bilelJs:Bilelbilel200@cluster0.0dt5b.mongodb.net/FlutterDB?retryWrites=true&w=majority";
+const CONNECTION_URL = "<YOUR_CONNECTION_URL>";
 
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser: true,
