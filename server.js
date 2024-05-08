@@ -24,11 +24,10 @@ app.use('/posts', postRoutes);
 
 
 app.get('/', (req, res) => {
-    res.send('Flutter-DB')
+    res.send('KOTLIN-DB')
 })
 
 const CONNECTION_URL = "<YOUR_CONNECTION_URL>";
-
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
