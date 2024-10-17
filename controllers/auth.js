@@ -132,6 +132,8 @@ export const signin = async (req, res) => {
 
         const notificationToken = await getAccessToken();
         sendNotif(notificationToken, {
+            title: "Welcome Back!",
+            body: "Notes Multiplatfrom Team",
             data: {
                 title: "Welcome Back!",
                 body: "Notes Multiplatfrom Team",
