@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/user.js";
+import postRoutes from './routes/posts.js';
+
 
 mongoose.Promise = global.Promise;
 
@@ -18,13 +20,14 @@ app.listen(PORT, () => {
 });
 
 app.use("/users", userRoutes);
+app.use('/posts', postRoutes);
 
 
 app.get('/', (req, res) => {
     res.send('KOTLIN-DB')
 })
 
-const CONNECTION_URL = "mongodb+srv://bilelJs:Bilelbilel200@cluster0.0dt5b.mongodb.net/";
+const CONNECTION_URL = "<YOUR_CONNECTION_URL>";
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
