@@ -1,6 +1,7 @@
 import User from "../models/user.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import { getAccessToken , sendNotif } from "../utils/notification.js";
 
 function validateEmail(email) {
     var re =
