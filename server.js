@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import userRoutes from "./routes/user.js";
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 mongoose.Promise = global.Promise;
@@ -25,7 +27,7 @@ app.get('/', (req, res) => {
     res.send('KOTLIN-DB')
 })
 
-const CONNECTION_URL = "mongodb+srv://bilelJs:Bilelbilel200@cluster0.0dt5b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const CONNECTION_URL = process.env.MONGO_URL;
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
