@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.send('KOTLIN-DB')
 })
 
-const CONNECTION_URL = "<YOUR_CONNECTION_URL>";
+const CONNECTION_URL = "mongodb+srv://bilelJs:Bilelbilel200@cluster0.0dt5b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

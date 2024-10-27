@@ -1,7 +1,7 @@
 import User from "../models/user.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { getAccessToken , sendNotif } from "../utils/notification.js";
+// import { getAccessToken , sendNotif } from "../utils/notification.js";
 
 function validateEmail(email) {
     var re =
@@ -132,16 +132,16 @@ export const signin = async (req, res) => {
             { expiresIn: "24h" }
         );
 
-        const notificationToken = await getAccessToken();
-        sendNotif(notificationToken, {
-            title: "Welcome Back!",
-            body: "Notes Multiplatfrom Team",
-            data: {
-                title: "Welcome Back!",
-                body: "Notes Multiplatfrom Team",
-            },
-            topic: "notes_multiplatform",
-          });
+      //  const notificationToken = await getAccessToken();
+      //  sendNotif(notificationToken, {
+      //      title: existingUser.name.toUpperCase() + " enter to the app now!",
+      //      body: "Notes Multiplatfrom Team",
+      //      data: {
+      //          title: existingUser.name.toUpperCase() + " enter to the app now!",
+      //          body: "Notes Multiplatfrom Team",
+      //      },
+      //      topic: "notes_multiplatform",
+      //    });
 
         res.status(200).json({ token: token, user: existingUser });
     } catch (error) {
